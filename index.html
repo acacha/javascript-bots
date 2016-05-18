@@ -27,19 +27,20 @@
 				<section>
 					<h2>Programació de robots amb Javascript</h2>
 					<p>
-						<small> <a href="http://acacha.org">Sergi Tur Badenas</a> / <a href="http://twitter.com/acacha1">@acacha1</a></small>
+						<small> <a href="http://acacha.org" target="_blank">Sergi Tur Badenas</a> / <a href="http://twitter.com/acacha1" target="_blank">@acacha1</a></small>
 					</p>
 					<img src="http://nodebots.io/img/equation.png">
+					<img src="http://images.monoprice.com/productlargeimages/139571.jpg" alt="mbot" width="400px"/>
 				</section>
 				<section>
 					<h2>Per què Javascript?</h2>
 					<ul>
 						<li>Javascript rules the (web) world</li>
-						<li>Suportat per tots els navegadors, Node.js, frameworks, ECMAScript 6...</li>
-						<li>Programació Alt Nivell vs Baix Nivell (Arduino) gràcies a Firmata</li>
+						<li>Suportat per navegadors, tenim Node.js i frameworks i ECMAScript 6 i Apache Cordova (aplicacions mòbils híbrides)...</li>
+						<li>Programació Alt Nivell vs Baix Nivell+Embedded. Gràcies a Firmata</li>
 						<li>Per què no? ;-)</li>
 					</ul>
-					<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" width="500px">
+					<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" width="400px" >
 				</section>
 
 				<section>
@@ -47,8 +48,18 @@
 					<ul>
 						<li class="fragment">No necessàriament només robots...</li>
 						<li class="fragment">... podem programar (gairebé) qualsevol plataforma Hardware...</li>
-						<li class="fragment">... i evidentment Arduino!</li>
+						<li class="fragment">... microcontroladors (Particle, BeagleBone, Tessel, Spruino)...</li>
+						<li class="fragment">... i evidentment Arduino!...</li>
+						<li class="fragment">... benvinguts a l'Internet de les coses (<b>IoT</b>)!</li>
+						<li class="fragment"><a href="http://www.slideshare.net/MikeAnderson45/nodejs-robots-nodebots" target="_blank">Exemples</a></li>
+
 					</ul>
+				</section>
+
+				<section>
+					<h1>Internet Of Things</h1>
+					<p><a href="http://www.slideshare.net/MikeAnderson45/nodejs-robots-nodebots" target="_blank">Exemples</a></p>
+					<img src="http://image.slidesharecdn.com/nodebots-150529213800-lva1-app6892/95/nodejs-robots-nodebots-4-638.jpg?cb=1432935670" alt="">
 				</section>
 
 				<section>
@@ -56,8 +67,9 @@
 						<h2>Arduino</h2>
 						<p>Arduino és una plataforma open-source per a la electrònica amb un hardware i software fàcil d'utilitzar:</p>
 						<ul>
-							<li class="fragment">Hardware: <a href="https://www.arduino.cc/en/Main/Products">Arduino boards</a> </li>
-							<li class="fragment">Software: <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a>  (multiplataforma)</li>
+							<li class="fragment">Hardware: <a href="https://www.arduino.cc/en/Main/Products" target="_blank">Arduino boards</a> </li>
+							<li class="fragment">Software: <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE</a>  (multiplataforma)</li>
+							<li class="fragment"><a href="http://acacha.org/mediawiki/Arduino" target="_blank">Arduino a acacha.org</a></li>
 						</ul>
 						<br>
 						<a href="#" class="navigate-down">
@@ -66,53 +78,118 @@
 					</section>
 					<section>
 						<h2>Arduino boards</h2>
-						<p>TODO Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<p>Un microcontrolador és un petit i simple computador.
+
+						<ul>
+							<li>Les plaques Arduino són els microcontroladors més coneguts.</p></li>
+							<li>Tenen un circuit programable integrat simple que permet detectar inputs (sensors) i generar outputs (activadors, leds, motors).</li>
+							<li><a href="https://www.arduino.cc/en/Main/Boards" target="_blank">Arduino boards</a></li>
+						</ul>
+						<img src="http://4.bp.blogspot.com/-9QdO_cz9I4g/U19ceO7mU5I/AAAAAAAAARc/qCRI2Wiqcg4/s1600/Skectch_Arduino_LED_Blink.png" alt="Arduino Uno" width="250px">
+
 					</section>
 					<section>
-						<h2>Arduino IDE</h2>
-						<p>TODO: That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+						<h4>Arduino IDE</h4>
+						<p><a href="https://www.arduino.cc/en/Main/Software">Arduino downloads</a></p>
+
+						<pre><code class="hlbash" data-trim>
+$ sudo apt-get install gcc-avr avr-libc
+$ cd && mkdir arduino && cd arduino
+$ wget https://downloads.arduino.cc/arduino-1.6.6-linux64.tar.xz
+$ sudo apt-get install xz-utils
+$ tar xf arduino-1.6.6-linux64.tar.xz
+$ cd arduino-1.6.6
+$ sudo usermod -aG dialout
+$ ./arduino
+</code></pre>
+						<img src="http://www.hacdc.org/wp-content/uploads/2012/05/the_Arduino_IDE-2.png" alt="Arduino IDE" width="400px">
+
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>Makeblock</h2>
-						<p>Arduino és una plataforma open-source per a la electrònica amb un hardware i software fàcil d'utilitzar:</p>
+						<p>Hardware Open Source i electrònica fàcil <a href="https://www.makeblock.es/" target="_blank">https://www.makeblock.es/</a></p>
 						<ul>
-							<li class="fragment">Hardware: <a href="https://www.arduino.cc/en/Main/Products">Arduino boards</a> </li>
-							<li class="fragment">Software: <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a>  (multiplataforma)</li>
+							<li><a href="http://makeblock.com/" target="_blank">Web anglesa makeblock</a></li>
+							<li>Arduino compatible</li>
+							<li><a href="http://learn.makeblock.com/step-1-wiring-color-marker-show-the-modules-connection-for-correct/" target="_blank">Primers passos</a></li>
 						</ul>
 						<br>
-						<a href="#" class="navigate-down">
-							<img data-src="http://casajasmina.arduino.cc/wp-content/themes/Arduino/images/s_logos/arduino_genuino.png" alt="Arduino">
-						</a>
+						<img src="https://www.makeblock.es/images/logo-makeblock.gif" alt="Makeblock logo">
+					</section>
+					<section>
+						<h2>Makeblock</h2>
+						<h4>Me Orion</h4>
+						<p>Basada en Arduino Uno. <a href="http://makeblock.com/me-orion-base-on-arduino-uno">Me orion</a></p>
+						<img src="http://learn.makeblock.com/wp-content/uploads/2014/10/wiring_0.jpg" alt="Wires with colors" width="500px">
+					</section>
+					<section>
+						<h2>Makeblock</h2>
+						<h4>Easy Motor Wiring</h4>
+						<img src="http://learn.makeblock.com/wp-content/uploads/2014/10/MotorWiring.jpg" alt="Motors" width="500px">
+					</section>
+					<section>
+						<h2>Makeblock</h2>
+						<h4>Easy wiring</h4>
+						<img src="http://learn.makeblock.com/wp-content/uploads/2014/10/ServoWiring.jpg" alt="Makeblock" width="250px">
+						<p>vs</p>
+						<img src="http://learn.makeblock.com/wp-content/uploads/2014/10/IMG_4887.jpg" alt="Arduino" width="250px">
 					</section>
 					<section>
 						<h2>Mbot</h2>
-						<p>TODO </p>
+						<p><a href="http://makeblock.com/mbot-stem-educational-robot-kit-for-kids/" target="_blank">Mbot</a> robot educacional!</p>
+						<img src="http://makeblock.com/image/cache/catalog/u/830/mBot3__93940-500x500.jpg" alt="Mbot robot">
+					</section>
+					<section>
+						<h2>Mcore</h2>
+						<p><a href="http://makeblock.com/mcore-main-control-board-for-mbot/" target="_blank">Mcore</a> és la placa integrada a robot Mbot</p>
+						<img src="http://makeblock.com/image/cache/catalog/b/989/4__09240-500x500.jpg" alt="Mcore" width="500px">
 					</section>
 					<section>
 						<h2>Mòduls. Inventor Electrònic Kit</h2>
-						<p>TODO </p>
+						<p><a href="http://makeblock.com/inventor-electronic-kit/">Kit de mòduls i sensors</a> </p>
+						<img src="http://makeblock.com/image/cache/catalog/t/240/94004_P1__35992-500x500.jpg" alt="Kit de mòduls i sensors" width="400px">
 					</section>
 					<section>
 						<h2>Ultimate robot kit</h2>
-						<p>TODO: That's it, time to go back up.</p>
+						<a src="http://makeblock.com/ultimate-robot-kit-blue/" alt="Ultimate Robot kit">
+							<img src="http://makeblock.com/image/cache/catalog/x/693/90024_07__54015-500x500.jpg" alt="Ultimate Robot kit">
+						<p><a href="https://www.makeblock.es/blog/comparativa-kits-makeblock/">Altres kits</a></p>
 						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+					</section>
+					<section>
+						<h4>Mblock</h4>
+						<p><a href="https://www.makeblock.es/tutoriales/aprender_programar_robots_con_mblock/">Mòdul per a Scratch</a>. Programació per blocs</p>
+						<img src="http://makeblock.es/public/blog/mblock/mblock_arduino.png" alt="Scratch mblock" width="500px">
 					</section>
 				</section>
 
 				<section>
-					<h2>Altres plataformes</h2>
-					Lego Mindstorms here
+					<h4>Altres plataformes / microcontroladors</h4>
+					<ul>
+						<li><a href="http://particle.io" target="_blank">Particle boards</a> </li>
+						<li><a href="http://beagleboard.org/" target="_blank">BeagleBone boards</a></li>
+						<li><a href="https://tessel.io" target="_blank">Tessel boards</a> (utilitza JS)</li>
+						<li><a href="http://www.espruino.com/" target="_blank">Espruino boards</a> (utilitza JS)</li>
+						<li>Raspberry Pi, Lego Mindstorms...</li>
+					</ul>
+					<br/>
+					<img src="http://cache.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/robots/product_r3ptar_square.png?l.r2=-1772998819" alt="Lego mindstorms snake" width="300px">
 				</section>
+
+				<section>
+					<h3>Javascript & Internet of Things 101</h3>
+					<p>Requeriments per poder programar la IoT amb Javascript:</p>
+					<ol>
+						<li>Microcontroladors amb firmware de propòsit general (<b>Firmata</b> o similars)</li>
+						<li>Executar Javascript des de fora navegadors: <b>Node.js</b>. També podem utilitzar Node.js des del navegador amb <b>Browserify</b></li>
+						<li><b>Frameworks</b> per facilitar la programació: Jhonny-five, nodebots, Cylon.js ...</li>
+						<li>Connectar host amb microcontrolador via connexió sèrie. La comunicació sèrie pot ser a través d'un tethering, USB, WIFI/Bluetooth...</li>
+					</ol>
+				</section>
+
 
 				<section>
 					<h2>Node.js</h2>
@@ -120,25 +197,53 @@
 				</section>
 
 				<section>
-					<h3>Frameworks Javascript per a la programació de robots</h3>
-					<ul>
-						<li>Nodebots: <a href="https://nodebots.io/">http://nodebots.io/</a></li>
-						<li>Cylon.js: <a href="https://cylonjs.com/">https://cylonjs.com/</a></li>
-						<li>Johny-five: <a href="http://johnny-five.io/">http://johnny-five.io/</a></li>
-					</ul>
+					<section>
+						<h1>Firmata</h1>
+						<p>Firmware multipropòsit que permet executar software al microcontrolador des de fora del microcontrolador. No cal actualitzar/instal·lar firmware al microcontrolador per cada programa que fem.</p>
+						<img src="http://firmata.org/w/images/b/b2/ArdFirmVB.png" alt="Firmata">
+					</section>
+					<section>
+						<h4>Firmata</h4>
+							<p>Protocol utilitzat per accedir a microcontroladors executant codi des d'un ordinador.</p>
+							<ul>
+								<li><b><a href="https://github.com/firmata/arduino" target="_blank">Firmware/Runtime/ThinClient</a></b>: StandardFirmataPlus</li>
+								<li><a href="http://acacha.org/mediawiki/Arduino#Firmata" target="_blank">Firmata a acacha.org</a></li>
+								<li><b>Alternatives</b>: PingFirmata Extensió PING_READ AdvancedFirmata: STEPPER_* extensions</li>
+
+							</ul>
+							<p>El programa JavaScript s'executa al host machine utilitzant Node.js. El programa transmet operacions bàsiques de I/O al microcontrolador utilitzant el protocol Firmata a través d'una connexió sèrie.</p>
+					</section>
+					<section>
+						<h1>Firmata</h1>
+						<h4>Instal·lació a Arduino</h4>
+						<p>El podem instal·lar desde la IDE d'Arduino</p>
+						<ul>
+							<li>Sketch > Include Library > Manage Libraries</li>
+							<li>Busqueu Firmata i instal·leu Firmata by Firmata Developers</li>
+							<li>Instal·leu el fitxer .ino de Arduino IDE -> [File] -> [Examples] -> [Firmata] -> [StandardFirmata]
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Firmata test</h4>
+						<p>Programa per testejar protocol firmata i dispositius amb el firmware Firmata instal·lat.
+							<a href="http://firmata.org/wiki/Main_Page" target="_blank">Firmata test</a></p>
+						<pre><code class="hlbash" data-trim>$ wget http://www.pjrc.com/teensy/firmata_test/firmata_test.64bit_2
+$ sudo chmod +x firmata_test.64bit_2
+$ ./firmata_test.64bit_2</code></pre>
+						<p><b>Board preparada!</b> Ara podem utilitzar Javascript per interactuar amb el microcontrolador. De fet podem utilitzar múltiples idiomes de programació com Python, Java, PHP vegeu
+							<a href="https://github.com/firmata/arduino" target="_blank">Firmata client libraries</a> </p>
+					</section>
+
 				</section>
 
 				<section>
-					<h1>Firmata</h1>
-					<ul>Environment
-						<li>Firmware/Runtime: StandardFirmataPlus (additional instructions)</li>
-						<li>The JavaScript program is executed on a host machine that runs Node.js. The program transmits basic IO instructions to the board via usb serial, which acts as a thin client. Requires tethering.</li>
+					<h3>Frameworks Javascript per a la programació de robots</h3>
+					<ul>
+						<li>Nodebots: <a href="https://nodebots.io/" target="_blank">http://nodebots.io/</a></li>
+						<li>Cylon.js: <a href="https://cylonjs.com/" target="_blank">https://cylonjs.com/</a></li>
+						<li>Johny-five: <a href="http://johnny-five.io/" target="_blank">http://johnny-five.io/</a></li>
 					</ul>
-					<ul>Platform Specific
-						<li>Supports the PING_READ extension, when used with PingFirmata.</li>
-						<li>Supports the STEPPER_* extensions when used with AdvancedFirmata or ConfigurableFirmata.</li>
-					</ul>
-					TODO Tethering
 				</section>
 
 				<section>
@@ -150,10 +255,10 @@
 					<h2>Johnny-five</h2>
 					<h4>Instal·lació:</h4>
 
+					<p>JavaScript Robotics i IoT programming framework. Creat per Rick Waldron</p>
 					<ul>
 						<li>Instal·lar Node.js</li>
-						<li>Preparar la placa (Arduino) amb <a href="http://johnny-five.io/platform-support/">Firmata</a>. </li>
-
+						<li>Preparar la placa (Arduino) amb <a href="http://johnny-five.io/platform-support/" target="_blank">Firmata</a>. </li>
 					</ul>
 
 					<pre><code class="hlbash" data-trim>
@@ -175,12 +280,49 @@ board.on("ready", function() {
 	led.blink(500);
 });
 					</code></pre>
-					<small> <a href="http://johnny-five.io/examples">Més exemples</a></small><br/>
+					<small> <a href="http://johnny-five.io/examples" target="_blank">Més exemples</a></small><br/>
 					<img src="http://johnny-five.io/img/led-scene-0.gif" width="300px" border="none"/>
 
 				</section>
 
-				<!--<small> <a href="http://acacha.org">http://acacha.github.io/javascript-bots</a> </small>-->
+				<section>
+					Apache Cordova: Aplicacions híbrides amb mòbils
+				</section>
+
+				<section>
+					Read Eval Print Loop: REPL
+					<pre><code class="hljs" data-trim contenteditable>
+/**
+* TODO
+*/
+var go = function(dir,time) {
+return new Promise( function resolve) {
+    motorLeft[dir](255);
+	motorRight[dir](255);
+	TODO...
+	}
+};
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Promises. Permeten treballar de forma asíncrona. Promises chaining</p>
+
+					<pre><code class="hljs" data-trim contenteditable>
+/**
+  * Go Forward
+  */
+  var go = function(dir,time) {
+   return new Promise( function resolve)
+};
+					</code></pre>
+
+				</section>
+				<section>
+					<p>Socket.io</p>
+				</section>
+
+				<!--<small> <a href="http://acacha.org" target="_blank">http://acacha.github.io/javascript-bots</a> </small>-->
 
 			</div>
 		</div>
