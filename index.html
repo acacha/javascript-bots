@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Programació de robots amb Javascript - Sergi Tur Badenas</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,164 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>Programació de robots amb Javascript</h2>
+					<p>
+						<small> <a href="http://acacha.org">Sergi Tur Badenas</a> / <a href="http://twitter.com/acacha1">@acacha1</a></small>
+					</p>
+					<img src="http://nodebots.io/img/equation.png">
+				</section>
+				<section>
+					<h2>Per què Javascript?</h2>
+					<ul>
+						<li>Javascript rules the (web) world</li>
+						<li>Suportat per tots els navegadors, Node.js, frameworks, ECMAScript 6...</li>
+						<li>Programació Alt Nivell vs Baix Nivell (Arduino) gràcies a Firmata</li>
+						<li>Per què no? ;-)</li>
+					</ul>
+					<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" width="500px">
+				</section>
+
+				<section>
+					<h3>Robots?</h3>
+					<ul>
+						<li class="fragment">No necessàriament només robots...</li>
+						<li class="fragment">... podem programar (gairebé) qualsevol plataforma Hardware...</li>
+						<li class="fragment">... i evidentment Arduino!</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Arduino</h2>
+						<p>Arduino és una plataforma open-source per a la electrònica amb un hardware i software fàcil d'utilitzar:</p>
+						<ul>
+							<li class="fragment">Hardware: <a href="https://www.arduino.cc/en/Main/Products">Arduino boards</a> </li>
+							<li class="fragment">Software: <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a>  (multiplataforma)</li>
+						</ul>
+						<br>
+						<a href="#" class="navigate-down">
+							<img data-src="http://casajasmina.arduino.cc/wp-content/themes/Arduino/images/s_logos/arduino_genuino.png" alt="Arduino">
+						</a>
+					</section>
+					<section>
+						<h2>Arduino boards</h2>
+						<p>TODO Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					</section>
+					<section>
+						<h2>Arduino IDE</h2>
+						<p>TODO: That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Makeblock</h2>
+						<p>Arduino és una plataforma open-source per a la electrònica amb un hardware i software fàcil d'utilitzar:</p>
+						<ul>
+							<li class="fragment">Hardware: <a href="https://www.arduino.cc/en/Main/Products">Arduino boards</a> </li>
+							<li class="fragment">Software: <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a>  (multiplataforma)</li>
+						</ul>
+						<br>
+						<a href="#" class="navigate-down">
+							<img data-src="http://casajasmina.arduino.cc/wp-content/themes/Arduino/images/s_logos/arduino_genuino.png" alt="Arduino">
+						</a>
+					</section>
+					<section>
+						<h2>Mbot</h2>
+						<p>TODO </p>
+					</section>
+					<section>
+						<h2>Mòduls. Inventor Electrònic Kit</h2>
+						<p>TODO </p>
+					</section>
+					<section>
+						<h2>Ultimate robot kit</h2>
+						<p>TODO: That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>Altres plataformes</h2>
+					Lego Mindstorms here
+				</section>
+
+				<section>
+					<h2>Node.js</h2>
+					TODO:
+				</section>
+
+				<section>
+					<h3>Frameworks Javascript per a la programació de robots</h3>
+					<ul>
+						<li>Nodebots: <a href="https://nodebots.io/">http://nodebots.io/</a></li>
+						<li>Cylon.js: <a href="https://cylonjs.com/">https://cylonjs.com/</a></li>
+						<li>Johny-five: <a href="http://johnny-five.io/">http://johnny-five.io/</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Firmata</h1>
+					<ul>Environment
+						<li>Firmware/Runtime: StandardFirmataPlus (additional instructions)</li>
+						<li>The JavaScript program is executed on a host machine that runs Node.js. The program transmits basic IO instructions to the board via usb serial, which acts as a thin client. Requires tethering.</li>
+					</ul>
+					<ul>Platform Specific
+						<li>Supports the PING_READ extension, when used with PingFirmata.</li>
+						<li>Supports the STEPPER_* extensions when used with AdvancedFirmata or ConfigurableFirmata.</li>
+					</ul>
+					TODO Tethering
+				</section>
+
+				<section>
+					<h2>Serial bus. Tethering. Internet Of Things</h2>
+					TODO: https://es.wikipedia.org/wiki/Tethering
+				</section>
+
+				<section>
+					<h2>Johnny-five</h2>
+					<h4>Instal·lació:</h4>
+
+					<ul>
+						<li>Instal·lar Node.js</li>
+						<li>Preparar la placa (Arduino) amb <a href="http://johnny-five.io/platform-support/">Firmata</a>. </li>
+
+					</ul>
+
+					<pre><code class="hlbash" data-trim>
+							$ npm install johnny-five
+						</code></pre>
+
+					<img src="http://ditrospecta.com/images/2015-12-04-introduction-arduino-node-plant/johnny-five.png">
+				</section>
+
+				<section>
+					<h2>Johnny-five</h2>
+					<h4>Hello World:</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+	var led = new five.Led(13);
+	led.blink(500);
+});
+					</code></pre>
+					<small> <a href="http://johnny-five.io/examples">Més exemples</a></small><br/>
+					<img src="http://johnny-five.io/img/led-scene-0.gif" width="300px" border="none"/>
+
+				</section>
+
+				<!--<small> <a href="http://acacha.org">http://acacha.github.io/javascript-bots</a> </small>-->
+
 			</div>
 		</div>
 
@@ -36,6 +192,10 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+
+				// Transition style
+				transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
