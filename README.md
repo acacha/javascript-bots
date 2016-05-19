@@ -1,9 +1,9 @@
 # Programació de robots amb Javascript 
 
-TODO
+Podeu veure la presentació a http://acacha.github.io/javascript-bots/#/
 
-## Table of contents
-- [Online Editor](#online-editor)
+## Taula de continguts
+- [Introducció](#introduction)
 - [Instructions](#instructions)
   - [Markup](#markup)
   - [Markdown](#markdown)
@@ -16,24 +16,28 @@ TODO
 - [Theming](#theming)
 - [Speaker Notes](#speaker-notes)
 
-## Online Editor
+## Introduction
 
-Presentations are written using HTML or Markdown but there's also an online editor for those of you who prefer a graphical interface. Give it a try at [http://slides.com](http://slides.com?ref=github).
+TODO
 
+## Instal·lació
 
-## Instructions
+Cloneu el repositori i executeu
 
-### Markup
+```bash
+npm install
+```
 
-### Folder Structure
-- **css/** Core styles without which the project does not function
-- **js/** Like above but for JavaScript
-- **plugin/** Components that have been developed as extensions to reveal.js
-- **lib/** All other third party assets (JavaScript, CSS, fonts)
+### Section 1.1 
 
+### Section 1.2
+- **css/** TODO
+- **js/** TODO
+- **lib/** TODO 3
+
+## Vegeu també
+- http://acacha.org
 
 ## License
 
-MIT licensed
-
-Copyright (C) 2016 Hakim El Hattab, http://hakim.se
+Creative Commons 

@@ -7,7 +7,7 @@
 		<title>Programació de robots amb Javascript - Sergi Tur Badenas</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -27,8 +27,18 @@
 				<section>
 					<h2>Programació de robots amb Javascript</h2>
 					<p>
-						<small> <a href="http://acacha.org" target="_blank">Sergi Tur Badenas</a> / <a href="http://twitter.com/acacha1" target="_blank">@acacha1</a></small>
+						<small> <a href="http://acacha.org" target="_blank">Sergi Tur Badenas</a> / <a href="http://twitter.com/acacha1" target="_blank">@acacha1</a>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<br/><small>Temes: <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a>
+							</small>
+						</small>
 					</p>
+
 					<img src="http://nodebots.io/img/equation.png">
 					<img src="http://images.monoprice.com/productlargeimages/139571.jpg" alt="mbot" width="400px"/>
 				</section>
@@ -92,7 +102,7 @@
 						<h4>Arduino IDE</h4>
 						<p><a href="https://www.arduino.cc/en/Main/Software">Arduino downloads</a></p>
 
-						<pre><code class="hlbash" data-trim>
+						<pre><code class="hlbash" data-trim contenteditable>
 $ sudo apt-get install gcc-avr avr-libc
 $ cd && mkdir arduino && cd arduino
 $ wget https://downloads.arduino.cc/arduino-1.6.6-linux64.tar.xz
@@ -104,6 +114,25 @@ $ ./arduino
 </code></pre>
 						<img src="http://www.hacdc.org/wp-content/uploads/2012/05/the_Arduino_IDE-2.png" alt="Arduino IDE" width="400px">
 
+					</section>
+					<section>
+						<h2>Programació en C</h2>
+						<h4>Hello world: Blink led!</h4>
+						<pre><code class="hlc" data-trim contenteditable>
+// the setup function runs once when you press reset or power the board
+void setup() {
+	// initialize digital pin 13 as an output.
+	pinMode(13, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+	digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
+	delay(1000);              // wait for a second
+	digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
+	delay(1000);              // wait for a second
+}
+						</code></pre>
 					</section>
 				</section>
 
@@ -162,6 +191,7 @@ $ ./arduino
 					<section>
 						<h4>Mblock</h4>
 						<p><a href="https://www.makeblock.es/tutoriales/aprender_programar_robots_con_mblock/">Mòdul per a Scratch</a>. Programació per blocs</p>
+						<p style="font-size: 50%;">No està per Linux però funciona en Wine (tot i que no he aconseguit fer anar ports sèrie). Es pot copiar el codi a Arduino IDE i instal·lar</p>
 						<img src="http://makeblock.es/public/blog/mblock/mblock_arduino.png" alt="Scratch mblock" width="500px">
 					</section>
 				</section>
@@ -192,8 +222,86 @@ $ ./arduino
 
 
 				<section>
-					<h2>Node.js</h2>
-					TODO:
+					<section>
+						<h2>Node.js</h2>
+						<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js">
+					</section>
+					<section>
+						<h2>Node.js</h2>
+						<ul>
+							<li>Node.js és un runtime Javascript (ECMAScript) que permet executar javascript fora dels navegadors.</li>
+							<li>Aplicacions servidor, aplicacions stand-alone, Javascript everywhere!.</li>
+							<li>Utilitza Chrome's V8 JavaScript engine.</li>
+							<li>Event-driven, non-blocking I/O model lleuger i eficient.</li>
+							<li>Sistema de paquets <b>npm</b> npm, sistema de codi obert open source més gran del món.</li>
+							<li><a href="http://acacha.org/mediawiki/Node.js">Node.js a acacha.org</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Node.js</h2>
+						<h4>Instal·lació</h4>
+						<pre><code class="hlbash" data-trim contenteditable>
+$ cd
+$ wget https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz
+$ tar xvzf node-v4.4.4-linux-x64.tar.gz
+$ editor .bashrc
+export PATH=~/node-v4.4.4-linux-x64/bin:${PATH}
+$ bash
+$ which npm
+/home/sergi/node-v4.4.4-linux-x64/bin/npm
+$ which node
+/home/sergi/node-v4.4.4-linux-x64/bin/node
+$ npm -v
+2.14.7
+$ node -v
+v4.4.4
+</code></pre>
+					</section>
+					<section>
+						<h2>Node.js</h2>
+						<h4>Instal·lació i ús de llibreries/mòduls</h4>
+						<pre><code class="hljs" data-trim contenteditable>
+$ npm install cylon cylon-firmata
+						</code></pre>
+						<pre><code class="hljs" data-trim contenteditable>
+var Cylon = require('cylon');
+
+Cylon.robot({
+connections: {
+arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }
+},
+
+devices: {
+led: { driver: 'led', pin: 13 }
+},
+
+work: function(my) {
+every((1).second(), my.led.toggle);
+}
+}).start();
+						</code></pre>
+
+					</section>
+				</section>
+
+				<section>
+					<h2>Connexió sèrie</h2>
+					<ul>
+						<li>Suport per Javascript/Node.js/npm: <a
+								href="https://github.com/EmergingTechnologyAdvisors/node-serialport">node-serialport</a></li>
+						<li>Tots els frameworks Javascript de robòtica suporten comunicació sèrie</li>
+						<li>Driver Linux instal·lar de sèrie (cal instal·lar en Windows)
+						<li><a href="https://es.wikipedia.org/wiki/Tethering">Tethering</a>. Es pot serialitzar qualsevol connexió USB, WIFI, Bluetooth, Ethernet -> Internet Of Things.</li>
+						<li><a href="http://acacha.org/mediawiki/Mbot_nodebots#Bluetooth">Instruccions bluetooth a acacha.org</a></li>
+					</ul>
+					<pre><code class="hljs" data-trim contenteditable>
+/dev/ttyS0 -> serial normal
+/dev/ttyUSB0 -> Serial USB. Bluetooth emparellar amb:
+$ sudo apt-get install blueman
+$ blueman-manager
+/dev/rfcom0 -> Serial Bluetooth
+					</code></pre>
+
 				</section>
 
 				<section>
@@ -240,28 +348,33 @@ $ ./firmata_test.64bit_2</code></pre>
 				<section>
 					<h3>Frameworks Javascript per a la programació de robots</h3>
 					<ul>
-						<li>Nodebots: <a href="https://nodebots.io/" target="_blank">http://nodebots.io/</a></li>
-						<li>Cylon.js: <a href="https://cylonjs.com/" target="_blank">https://cylonjs.com/</a></li>
 						<li>Johny-five: <a href="http://johnny-five.io/" target="_blank">http://johnny-five.io/</a></li>
+						<li>Cylon.js: <a href="https://cylonjs.com/" target="_blank">https://cylonjs.com/</a></li>
+						<li>Nodebots: <a href="https://nodebots.io/" target="_blank">http://nodebots.io/</a></li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Serial bus. Tethering. Internet Of Things</h2>
-					TODO: https://es.wikipedia.org/wiki/Tethering
+					<h2>Cylon.js</h2>
+					<ul>
+						<li><a href="https://github.com/hybridgroup/cylon/">Github</a></li>
+						<li>Suporta un munt de <a href="https://cylonjs.com/documentation/platforms/">plataformes</a> no totes Open</li>
+						<li>Suport per a drones , robots sphero, leap motion, llums inteligent com Philips Hue</li>
+					</ul>
+					<img src="https://www.socallinuxexpo.org/sites/default/files/logos/CylonJS.png" alt="Cylon.js">
 				</section>
-
 				<section>
 					<h2>Johnny-five</h2>
 					<h4>Instal·lació:</h4>
 
-					<p>JavaScript Robotics i IoT programming framework. Creat per Rick Waldron</p>
+					<p>JavaScript Robotics i IoT programming framework. Creat per Rick Waldron. Requeriments:</p>
 					<ul>
 						<li>Instal·lar Node.js</li>
 						<li>Preparar la placa (Arduino) amb <a href="http://johnny-five.io/platform-support/" target="_blank">Firmata</a>. </li>
+						<li>Instal·lar llibreria amb <b>npm</b></li>
 					</ul>
 
-					<pre><code class="hlbash" data-trim>
+					<pre><code class="hlbash" data-trim contenteditable>
 							$ npm install johnny-five
 						</code></pre>
 
@@ -271,6 +384,7 @@ $ ./firmata_test.64bit_2</code></pre>
 				<section>
 					<h2>Johnny-five</h2>
 					<h4>Hello World:</h4>
+					<p><small>Codi a github <a href="https://github.com/acacha/javascript-bots">https://github.com/acacha/javascript-bots</a>: blink_led_j5.js</small></p>
 					<pre><code class="hljs" data-trim contenteditable>
 var five = require("johnny-five");
 var board = new five.Board();
@@ -281,8 +395,37 @@ board.on("ready", function() {
 });
 					</code></pre>
 					<small> <a href="http://johnny-five.io/examples" target="_blank">Més exemples</a></small><br/>
-					<img src="http://johnny-five.io/img/led-scene-0.gif" width="300px" border="none"/>
+					<img src="http://johnny-five.io/img/led-scene-0.gif" width="200px" border="none"/>
 
+				</section>
+
+				<section>
+					<h2>Johnny-five</h2>
+					<h4>Execució hello World:</h4>
+					<pre><code class="hlbash" data-trim contenteditable>
+$ node blink_led_j5.js
+1463669542289 Device(s) /dev/ttyUSB1
+1463669542296 Connected /dev/ttyUSB1
+1463669545805 Repl Initialized
+					</code></pre>
+					<ul>
+						<li>Observeu que busca automàticament port USB, però podem indicar quin port volem utilitzar. Exemple bluetooth (executeu com a root!)</li>
+					</ul>
+					<pre><code class="hlbash" data-trim contenteditable>
+new five.Board({ port: "/dev/rfcomm0" });
+$sudo node blink_led_j5_bt.js
+1463669857246 Connected /dev/rfcomm0
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Robot Mbot amb nodebots</h2>
+					<ul>
+						<li><a href="http://acacha.org/mediawiki/Mbot_nodebots">Mbot nodebots a acacha.org</a></li>
+						<li><a href="https://github.com/Makeblock-official/mbot_nodebots">Github</a></li>
+						<li>Hi ha un firmata especial per Mbot: firmware/src/mbotFirmata/mbotFirmata.ino</li>
+						<li>Es pot utilitzar <a href="http://acacha.org/mediawiki/Nvm">nvm</a> per treballar amb diferents versions de node. Només va amb 0.12.7</li>
+					</ul>
 				</section>
 
 				<section>
