@@ -543,21 +543,10 @@ node motors.js /dev/rfcomm0
 						<li>Proporciona una consola interactiva amb JavaScript útil per depurar, Tinkering, testing...</li>
 						<li><a href="https://nodejs.org/api/repl.html">https://nodejs.org/api/repl.html</a></li>
 						<li>Amb Jhonny-five no utilitzem el de Node! Les instàncies board ja creen el seu propi REPL.</li>
+						<li>Similar a la consola dels navegadors Chrome Dev Tools/Firebug</li>
+						<li>Similar a Laravel: $php artisan tinker</li>
 					</ul>
 
-					<p></p>
-					<pre><code class="hljs" data-trim contenteditable>
-/**
-* TODO
-*/
-var go = function(dir,time) {
-return new Promise( function resolve) {
-    motorLeft[dir](255);
-	motorRight[dir](255);
-	TODO...
-	}
-};
-					</code></pre>
 				</section>
 
 				<section>
@@ -597,21 +586,91 @@ board.on("ready", function() {
 				</section>
 
 				<section>
-					<p>Promises. Permeten treballar de forma asíncrona. Promises chaining</p>
+					<h2>Socket.io</h2>
+					<ul>
+						<li>Websockets: Activen comunicació bidireccional client-servidor en web</li>
+						<li>Permeten enviar esdeveniments push, del servidor web al navegador</li>
+						<li>Aplicacions real time com Chats, sense Polling</li>
+					</ul>
+					npm install express --save
+					<pre><code class="hlbash" data-trim contenteditable>
+$ npm install express --save
+URL: http://localhost:3000
+					</code></pre>
 
+				</section>
+
+				<section>
+					<h2>Socket.io</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+// server.js
+var express = require('express');
+var app = express();
+var httpServer = require("http").createServer(app);
+var five = require("johnny-five");
+var io=require('socket.io')(httpServer);
+
+var port = 3000;
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + '/public/index.html');
+});
+
+httpServer.listen(port);
+console.log('Server available at http://localhost:' + port);
+var led;
+
+//Arduino board connection
+
+var board = new five.Board();
+	board.on("ready", function() {
+	console.log('Arduino connected');
+	led = new five.Led(13);
+});
+
+//Socket connection handler
+io.on('connection', function (socket) {
+	console.log(socket.id);
+
+	socket.on('led:on', function (data) {
+		led.on();
+		console.log('LED ON RECEIVED');
+	});
+
+	socket.on('led:off', function (data) {
+		led.off();
+		console.log('LED OFF RECEIVED');
+	});
+});
+
+console.log('Waiting for connection');
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Javascript Promises</h2>
+					<p>Permeten treballar de forma asíncrona</p>
+					<ul>
+						<li><a href="http://www.slideshare.net/MikeAnderson45/nodejs-robots-nodebots">Transparència 20</a></li>
+					</ul>
 					<pre><code class="hljs" data-trim contenteditable>
 /**
   * Go Forward
   */
-  var go = function(dir,time) {
-   return new Promise( function resolve)
+var go = function(dir,time) {
+	return new Promise( function resolve) {
+	 //go code here
+	});
+	this.repl.inject({
+	 go: go
+	});
 };
 					</code></pre>
 
 				</section>
-				<section>
-					<p>Socket.io</p>
-				</section>
+
 
 				<!--<small> <a href="http://acacha.org" target="_blank">http://acacha.github.io/javascript-bots</a> </small>-->
 

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Socket.io example</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+
+</head>
+<body>
+<h1>Hello led with socket.io!</h1>
+
+<div class="btn-group" id="toggle_event_editing">
+    <button type="button" class="btn btn-info locked_active">OFF</button>
+    <button type="button" class="btn btn-default unlocked_inactive">ON</button>
+</div>
+<div class="alert alert-info" id="switch_status">Switched off.</div>
+
+<div class="btn-group" id="toggle_event_go">
+    <button type="button" class="btn btn-info locked_active">OFF</button>
+    <button type="button" class="btn btn-default unlocked_inactive">ON</button>
+</div>
+<div class="alert alert-info" id="switch_status_1">Go off.</div>
+
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+ <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+<script>
+
+    var socket = io('http://localhost:3000');
+
+    $('#toggle_event_editing button').click(function(){
+        if($(this).hasClass('locked_active') || $(this).hasClass('unlocked_inactive')){
+            /* code to do when unlocking */
+            $('#switch_status').html('Switched on.');
+            console.log('Switched on.');
+            socket.emit('led:on');
+        }else{
+            /* code to do when locking */
+            $('#switch_status').html('Switched off.');
+            console.log('Switched off.');
+            socket.emit('led:off');
+        }
+
+        /* reverse locking status */
+        $('#toggle_event_editing button').eq(0).toggleClass('locked_inactive locked_active btn-default btn-info');
+        $('#toggle_event_editing button').eq(1).toggleClass('unlocked_inactive unlocked_active btn-info btn-default');
+    });
+
+    $('#toggle_event_go button').click(function(){
+        if($(this).hasClass('locked_active') || $(this).hasClass('unlocked_inactive')){
+            /* code to do when unlocking */
+            $('#switch_status_1').html('Go on.');
+            console.log('Go on.');
+            socket.emit('go:on');
+        }else{
+            /* code to do when locking */
+            $('#switch_status_1').html('Go off.');
+            console.log('Go off.');
+            socket.emit('go:off');
+        }
+
+        /* reverse locking status */
+        $('#toggle_event_go button').eq(0).toggleClass('locked_inactive locked_active btn-default btn-info');
+        $('#toggle_event_go button').eq(1).toggleClass('unlocked_inactive unlocked_active btn-info btn-default');
+    });
+</script>
+
+</body>
+</html>
