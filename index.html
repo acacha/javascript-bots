@@ -526,13 +526,16 @@ node motors.js /dev/rfcomm0
 				</section>
 
 				<section>
-					<h2>Console API</h2>
+					<h2>Gamepad API</h2>
 					<ul>
 						<li>Podem connectar qualsevol gamepad, joystick a través d'un codi Javascript al nostre robot</li>
 						<li>També amb un mòdul USB host es pot associar el gamepad directe al robot</li>
 						<li><a href="http://openlab.makeblock.com/topic/56a6cc40e6aa7d0e42ba2cb4">Link 1</a></li>
-						<img src="http://cdn.latam.playstation.com/latamucm/groups/public/documents/webasset/dualshock_3_small1_mx.jpg"
-							 alt="Playstation DualShock">
+						<li><a href="http://acacha.org/mediawiki/Gamepad#Gamepad_API">Gamepad API a acacha.org</a></li>
+						<li><a href="http://luser.github.io/gamepadtest/">Test</a></li>
+						<li><a href="http://www.instructables.com/id/mBot-controlled-by-Wireless-Joystick-using-Me-USB-/">http://www.instructables.com/id/mBot-controlled-by-Wireless-Joystick-using-Me-USB-/</a></li>
+						<center><img src="http://cdn.latam.playstation.com/latamucm/groups/public/documents/webasset/dualshock_3_small1_mx.jpg"
+									 alt="Playstation DualShock" width="200px"></center>
 					</ul>
 				</section>
 
@@ -594,7 +597,7 @@ board.on("ready", function() {
 					</ul>
 					npm install express --save
 					<pre><code class="hlbash" data-trim contenteditable>
-$ npm install express --save
+$ npm install socket.io express --save
 URL: http://localhost:3000
 					</code></pre>
 
@@ -650,6 +653,18 @@ console.log('Waiting for connection');
 				</section>
 
 				<section>
+					<h2>Socket.io</h2>
+					<p>Al client (navegador/pàgina web o app standalone node.js) només cal executar:</p>
+					<pre><code class="hljs" data-trim contenteditable>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+var socket = io('http://localhost:3000');
+socket.emit('led:on');
+socket.emit('led:off');
+					</code></pre>
+				</section>
+
+
+				<section>
 					<h2>Javascript Promises</h2>
 					<p>Permeten treballar de forma asíncrona</p>
 					<ul>
@@ -669,6 +684,11 @@ var go = function(dir,time) {
 };
 					</code></pre>
 
+				</section>
+				
+				<section>
+					<h2>The end: RIP?</h2>
+					<img src="https://seesouthernstars.files.wordpress.com/2015/06/porkey.jpg" alt="ThatsAllFolks">
 				</section>
 
 
