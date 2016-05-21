@@ -100,7 +100,7 @@
 					</section>
 					<section>
 						<h4>Arduino IDE</h4>
-						<p><a href="https://www.arduino.cc/en/Main/Software">Arduino downloads</a></p>
+						<p><a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino downloads</a></p>
 
 						<pre><code class="hlbash" data-trim contenteditable>
 $ sudo apt-get install gcc-avr avr-libc
@@ -151,7 +151,7 @@ void loop() {
 					<section>
 						<h2>Makeblock</h2>
 						<h4>Me Orion</h4>
-						<p>Basada en Arduino Uno. <a href="http://makeblock.com/me-orion-base-on-arduino-uno">Me orion</a></p>
+						<p>Basada en Arduino Uno. <a href="http://makeblock.com/me-orion-base-on-arduino-uno" target="_blank">Me orion</a></p>
 						<img src="http://learn.makeblock.com/wp-content/uploads/2014/10/wiring_0.jpg" alt="Wires with colors" width="500px">
 					</section>
 					<section>
@@ -173,24 +173,27 @@ void loop() {
 					</section>
 					<section>
 						<h2>Mcore</h2>
-						<p><a href="http://makeblock.com/mcore-main-control-board-for-mbot/" target="_blank">Mcore</a> és la placa integrada a robot Mbot</p>
-						<img src="http://makeblock.com/image/cache/catalog/b/989/4__09240-500x500.jpg" alt="Mcore" width="500px">
+						<p><a href="http://makeblock.com/mcore-main-control-board-for-mbot/" target="_blank">Mcore</a> és la placa integrada al robot Mbot</p>
+						<p>Permet connexió USB o per bluetooth o Wifi (mochila wifi) amb mòduls intercanviables</p>
+						<img src="http://makeblock.com/image/cache/catalog/b/989/4__09240-500x500.jpg" alt="Mcore" width="400px">
 					</section>
 					<section>
 						<h2>Mòduls. Inventor Electrònic Kit</h2>
-						<p><a href="http://makeblock.com/inventor-electronic-kit/">Kit de mòduls i sensors</a> </p>
+						<p><a href="http://makeblock.com/inventor-electronic-kit/" target="_blank">Kit de mòduls i sensors</a> </p>
 						<img src="http://makeblock.com/image/cache/catalog/t/240/94004_P1__35992-500x500.jpg" alt="Kit de mòduls i sensors" width="400px">
 					</section>
 					<section>
 						<h2>Ultimate robot kit</h2>
-						<a src="http://makeblock.com/ultimate-robot-kit-blue/" alt="Ultimate Robot kit">
-							<img src="http://makeblock.com/image/cache/catalog/x/693/90024_07__54015-500x500.jpg" alt="Ultimate Robot kit">
-						<p><a href="https://www.makeblock.es/blog/comparativa-kits-makeblock/">Altres kits</a></p>
-						<br>
+						<a href="http://makeblock.com/ultimate-robot-kit-blue/" alt="Ultimate Robot kit" target="_blank">
+							<img src="http://makeblock.com/image/cache/catalog/x/693/90024_07__54015-500x500.jpg" alt="Ultimate Robot kit" width="500px">
+						<p>
+							<a href="https://www.makeblock.es/blog/comparativa-kits-makeblock/" target="_blank">Altres kits</a> | <a href="https://www.youtube.com/watch?v=VuLEPNAFB7o">Vídeo mDrawBot</a>
+						</p>
+
 					</section>
 					<section>
 						<h4>Mblock</h4>
-						<p><a href="https://www.makeblock.es/tutoriales/aprender_programar_robots_con_mblock/">Mòdul per a Scratch</a>. Programació per blocs</p>
+						<p><a href="https://www.makeblock.es/tutoriales/aprender_programar_robots_con_mblock/" target="_blank">Mòdul per a Scratch</a>. Programació per blocs</p>
 						<p style="font-size: 50%;">No està per Linux però funciona en Wine (tot i que no he aconseguit fer anar ports sèrie). Es pot copiar el codi a Arduino IDE i instal·lar</p>
 						<img src="http://makeblock.es/public/blog/mblock/mblock_arduino.png" alt="Scratch mblock" width="500px">
 					</section>
@@ -200,10 +203,10 @@ void loop() {
 					<h4>Altres plataformes / microcontroladors</h4>
 					<ul>
 						<li><a href="http://particle.io" target="_blank">Particle boards</a> </li>
-						<li><a href="http://beagleboard.org/" target="_blank">BeagleBone boards</a></li>
+						<li><a href="http://beagleboard.org/" target="_blank">BeagleBone boards (Debian)</a></li>
 						<li><a href="https://tessel.io" target="_blank">Tessel boards</a> (utilitza JS)</li>
 						<li><a href="http://www.espruino.com/" target="_blank">Espruino boards</a> (utilitza JS)</li>
-						<li>Raspberry Pi, Lego Mindstorms...</li>
+						<li><a href="https://www.raspberrypi.org/">Raspberry Pi</a>, <a href="http://www.lego.com/en-us/mindstorms">Lego Mindstorms...</a></li>
 					</ul>
 					<br/>
 					<img src="http://cache.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/robots/product_r3ptar_square.png?l.r2=-1772998819" alt="Lego mindstorms snake" width="300px">
@@ -213,8 +216,9 @@ void loop() {
 					<h3>Javascript & Internet of Things 101</h3>
 					<p>Requeriments per poder programar la IoT amb Javascript:</p>
 					<ol>
-						<li>Microcontroladors amb firmware de propòsit general (<b>Firmata</b> o similars)</li>
-						<li>Executar Javascript des de fora navegadors: <b>Node.js</b>. També podem utilitzar Node.js des del navegador amb <b>Browserify</b></li>
+						<li>Microcontroladors amb firmware de propòsit general (<b>Firmata</b> o similars).</li>
+						<li>Executar Javascript des de fora navegadors: <b>Node.js</b>. També podem utilitzar Node.js des del navegador amb <b><a
+								href="http://browserify.org/">Browserify</a></b>.</li>
 						<li><b>Frameworks</b> per facilitar la programació: Jhonny-five, nodebots, Cylon.js ...</li>
 						<li>Connectar host amb microcontrolador via connexió sèrie. La comunicació sèrie pot ser a través d'un tethering, USB, WIFI/Bluetooth...</li>
 					</ol>
@@ -234,7 +238,7 @@ void loop() {
 							<li>Utilitza Chrome's V8 JavaScript engine.</li>
 							<li>Event-driven, non-blocking I/O model lleuger i eficient.</li>
 							<li>Sistema de paquets <b>npm</b> npm, sistema de codi obert open source més gran del món.</li>
-							<li><a href="http://acacha.org/mediawiki/Node.js">Node.js a acacha.org</a></li>
+							<li><a href="http://acacha.org/mediawiki/Node.js" target="_blank">Node.js a acacha.org</a>.</li>
 						</ul>
 					</section>
 					<section>
@@ -267,16 +271,16 @@ $ npm install cylon cylon-firmata
 var Cylon = require('cylon');
 
 Cylon.robot({
-connections: {
-arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }
+	connections: {
+	arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }
 },
 
 devices: {
-led: { driver: 'led', pin: 13 }
+	led: { driver: 'led', pin: 13 }
 },
 
 work: function(my) {
-every((1).second(), my.led.toggle);
+	every((1).second(), my.led.toggle);
 }
 }).start();
 						</code></pre>
@@ -291,15 +295,15 @@ every((1).second(), my.led.toggle);
 								href="https://github.com/EmergingTechnologyAdvisors/node-serialport">node-serialport</a></li>
 						<li>Tots els frameworks Javascript de robòtica suporten comunicació sèrie</li>
 						<li>Driver Linux instal·lar de sèrie (cal instal·lar en Windows)
-						<li><a href="https://es.wikipedia.org/wiki/Tethering">Tethering</a>. Es pot serialitzar qualsevol connexió USB, WIFI, Bluetooth, Ethernet -> Internet Of Things.</li>
-						<li><a href="http://acacha.org/mediawiki/Mbot_nodebots#Bluetooth">Instruccions bluetooth a acacha.org</a></li>
+						<li><a href="https://es.wikipedia.org/wiki/Tethering" target="_blank">Tethering</a>. Es pot serialitzar qualsevol connexió USB, WIFI, Bluetooth, Ethernet -> Internet Of Things.</li>
+						<li><a href="http://acacha.org/mediawiki/Mbot_nodebots#Bluetooth" target="_blank">Instruccions bluetooth a acacha.org</a></li>
 					</ul>
 					<pre><code class="hljs" data-trim contenteditable>
 /dev/ttyS0 -> serial normal
 /dev/ttyUSB0 -> Serial USB. Bluetooth emparellar amb:
 $ sudo apt-get install blueman
 $ blueman-manager
-/dev/rfcom0 -> Serial Bluetooth
+/dev/rfcomm0 -> Serial Bluetooth
 					</code></pre>
 
 				</section>
@@ -320,6 +324,7 @@ $ blueman-manager
 
 							</ul>
 							<p>El programa JavaScript s'executa al host machine utilitzant Node.js. El programa transmet operacions bàsiques de I/O al microcontrolador utilitzant el protocol Firmata a través d'una connexió sèrie.</p>
+							<p>Firmata converteix el microcontrolador en un <b>thin client</b>.</p>
 					</section>
 					<section>
 						<h1>Firmata</h1>
@@ -328,8 +333,8 @@ $ blueman-manager
 						<ul>
 							<li>Sketch > Include Library > Manage Libraries</li>
 							<li>Busqueu Firmata i instal·leu Firmata by Firmata Developers</li>
-							<li>Instal·leu el fitxer .ino de Arduino IDE -> [File] -> [Examples] -> [Firmata] -> [StandardFirmata]
-							</li>
+							<li>Instal·leu el fitxer .ino de Arduino IDE -> [File] -> [Examples] -> [Firmata] -> [StandardFirmata]</li>
+							<li>Oco! El Mbot té un firmata a mida, vegeu projecte <a href="https://github.com/Makeblock-official/mbot_nodebots">mbot_nodebots</a></li>
 						</ul>
 					</section>
 					<section>
@@ -340,7 +345,7 @@ $ blueman-manager
 $ sudo chmod +x firmata_test.64bit_2
 $ ./firmata_test.64bit_2</code></pre>
 						<p><b>Board preparada!</b> Ara podem utilitzar Javascript per interactuar amb el microcontrolador. De fet podem utilitzar múltiples idiomes de programació com Python, Java, PHP vegeu
-							<a href="https://github.com/firmata/arduino" target="_blank">Firmata client libraries</a> </p>
+							<a href="https://github.com/firmata/arduino" target="_blank">Firmata client libraries</a>.</p>
 					</section>
 
 				</section>
@@ -350,15 +355,15 @@ $ ./firmata_test.64bit_2</code></pre>
 					<ul>
 						<li>Johny-five: <a href="http://johnny-five.io/" target="_blank">http://johnny-five.io/</a></li>
 						<li>Cylon.js: <a href="https://cylonjs.com/" target="_blank">https://cylonjs.com/</a></li>
-						<li>Nodebots: <a href="https://nodebots.io/" target="_blank">http://nodebots.io/</a></li>
+						<li>Projecte Nodebots: <a href="https://nodebots.io/" target="_blank">http://nodebots.io/</a></li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Cylon.js</h2>
 					<ul>
-						<li><a href="https://github.com/hybridgroup/cylon/">Github</a></li>
-						<li>Suporta un munt de <a href="https://cylonjs.com/documentation/platforms/">plataformes</a> no totes Open</li>
+						<li><a href="https://github.com/hybridgroup/cylon/" target="_blank">Github</a></li>
+						<li>Suporta un munt de <a href="https://cylonjs.com/documentation/platforms/" target="_blank">plataformes</a> no totes Open</li>
 						<li>Suport per a drones , robots sphero, leap motion, llums inteligent com Philips Hue</li>
 					</ul>
 					<img src="https://www.socallinuxexpo.org/sites/default/files/logos/CylonJS.png" alt="Cylon.js">
@@ -384,7 +389,7 @@ $ ./firmata_test.64bit_2</code></pre>
 				<section>
 					<h2>Johnny-five</h2>
 					<h4>Hello World:</h4>
-					<p><small>Codi a github <a href="https://github.com/acacha/javascript-bots">https://github.com/acacha/javascript-bots</a>: blink_led_j5.js</small></p>
+					<p><small>Codi a github <a href="https://github.com/acacha/javascript-bots" target="_blank">https://github.com/acacha/javascript-bots</a>: blink_led_j5.js</small></p>
 					<pre><code class="hljs" data-trim contenteditable>
 var five = require("johnny-five");
 var board = new five.Board();
@@ -421,19 +426,126 @@ $sudo node blink_led_j5_bt.js
 				<section>
 					<h2>Robot Mbot amb nodebots</h2>
 					<ul>
-						<li><a href="http://acacha.org/mediawiki/Mbot_nodebots">Mbot nodebots a acacha.org</a></li>
-						<li><a href="https://github.com/Makeblock-official/mbot_nodebots">Github</a></li>
-						<li>Hi ha un firmata especial per Mbot: firmware/src/mbotFirmata/mbotFirmata.ino</li>
-						<li>Es pot utilitzar <a href="http://acacha.org/mediawiki/Nvm">nvm</a> per treballar amb diferents versions de node. Només va amb 0.12.7</li>
+						<li><a href="http://acacha.org/mediawiki/Mbot_nodebots" target="_blank">Mbot nodebots a acacha.org</a></li>
+						<li><a href="https://github.com/Makeblock-official/mbot_nodebots" target="_blank">Github</a></li>
+						<li>Hi ha un firmata especial per Mbot per USB i Bluetooth: <a href="https://github.com/Makeblock-official/mbot_nodebots/blob/master/firmware/build/bluetooth/mbotFirmata/mbotFirmata.ino">firmware/src/mbotFirmata/mbotFirmata.ino</a></li>
+						<li>Es pot utilitzar <a href="http://acacha.org/mediawiki/Nvm" target="_blank">nvm</a> per treballar amb diferents versions de node. Només va amb 0.12.7</li>
+						<li>A la carpeta mbot_nodebots/examples de <a href="https://github.com/Makeblock-official/mbot_nodebots" target="_blank">Github</a> tenim diferents exemples del que podem fer</li>
 					</ul>
 				</section>
 
 				<section>
-					Apache Cordova: Aplicacions híbrides amb mòbils
+					<h2>Robot Mbot amb nodebots</h2>
+					<ul>
+						<li>Exemple per controlar els motors</li>
+						<li>asdasd</li>
+					</ul>
+					<pre><code class="hljs" data-trim contenteditable>
+var five = require("johnny-five");
+
+var max_speed_l = 255;
+var max_speed_r = 255;
+
+// set up the input
+var stdin = process.openStdin();
+require('tty').setRawMode(true);
+
+var board = new five.Board({port: process.argv[2]});
+
+var l_motor = r_motor = null;
+
+board.on("ready", function(err) {
+	if (err){
+		console.log(err);
+	return;
+}
+
+l_motor = new five.Motor({pins: {pwm: 6, dir: 7}});
+r_motor = new five.Motor({pins: {pwm: 5, dir: 4}});
+
+console.info("Board connected. Robot set up. LRUD to control");
+
+});
+
+stdin.on('keypress', function(chunk, key) {
+	// process the keypresses
+  if (key) {
+    switch (key.name) {
+      case "up":
+        l_motor.reverse(max_speed_l);
+        r_motor.forward(max_speed_r);
+        break;
+      case "down":
+        r_motor.reverse(max_speed_r);
+        l_motor.forward(max_speed_l);
+        break;
+      case "left":
+        l_motor.forward(max_speed_l);
+        r_motor.forward(max_speed_r);
+        break;
+      case "right":
+        r_motor.reverse(max_speed_r);
+        l_motor.reverse(max_speed_l);
+      break;
+      case "space":
+        l_motor.stop();
+        r_motor.stop();
+        break;
+}}});</code></pre>
 				</section>
 
 				<section>
-					Read Eval Print Loop: REPL
+					<h2>Robot Mbot amb nodebots</h2>
+					<h4>Exemple amb bluetooth</h4>
+					<pre><code class="hlbash" data-trim contenteditable>
+$ sudo su
+cd /home/sergi/Code/Mbot/mbot_nodebots/examples
+nvm install v0.12.7
+nvm list
+v0.12.7
+nvm use v0.12.7
+node -v
+v0.12.7
+rfcomm connect 0 // Només si encara no teniu connectat el dispositiu per bluetooth. Potser ja l'heu connectat utilitzant les eines de Gnome per bluetooth o Blueman manager
+node motors.js /dev/rfcomm0
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Apache Cordova</h2>
+					<h4>Aplicacions híbrides amb mòbils</h4>
+					<blockquote>
+						&ldquo;Write once deploy everywhere!&ldquo;
+					</blockquote>
+					<ul>
+						<li>Permet convertir a natiu (Android/IOS/Windows Mobile...) codi Javascript. Suport multiplataforma.</li>
+						<li>Cal tenir en compte programació responsive i multidispositiu.</li>
+						<li>Es poden utilitzar funcionalitats natives com sensors (p. ex. Tilt).</li>
+						<li>Podeu crear aplicacions mòbils per a robots amb Javascript!.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Console API</h2>
+					<ul>
+						<li>Podem connectar qualsevol gamepad, joystick a través d'un codi Javascript al nostre robot</li>
+						<li>També amb un mòdul USB host es pot associar el gamepad directe al robot</li>
+						<li><a href="http://openlab.makeblock.com/topic/56a6cc40e6aa7d0e42ba2cb4">Link 1</a></li>
+						<img src="http://cdn.latam.playstation.com/latamucm/groups/public/documents/webasset/dualshock_3_small1_mx.jpg"
+							 alt="Playstation DualShock">
+					</ul>
+				</section>
+
+				<section>
+					<h2>Read Eval Print Loop: REPL</h2>
+					<ul>
+						<li>Funcionalitat de sèrie amb node.js al executar: $ node </li>
+						<li>Proporciona una consola interactiva amb JavaScript útil per depurar, Tinkering, testing...</li>
+						<li><a href="https://nodejs.org/api/repl.html">https://nodejs.org/api/repl.html</a></li>
+						<li>Amb Jhonny-five no utilitzem el de Node! Les instàncies board ja creen el seu propi REPL.</li>
+					</ul>
+
+					<p></p>
 					<pre><code class="hljs" data-trim contenteditable>
 /**
 * TODO
@@ -446,6 +558,42 @@ return new Promise( function resolve) {
 	}
 };
 					</code></pre>
+				</section>
+
+				<section>
+					<h4>Read Eval Print Loop: REPL</h4>
+					<p>
+						<small>
+							<a href="https://github.com/rwaldron/johnny-five/blob/master/docs/repl.md" target="_blank">https://github.com/rwaldron/johnny-five/blob/master/docs/repl.md</a>
+						</small>
+					</p>
+					<pre><code class="hljs" data-trim contenteditable>
+var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+	console.log("Ready event. Repl instance auto-initialized!");
+
+	var led = new five.Led(13);
+	led.on();
+
+	this.repl.inject({
+		// Allow limited on/off control access to the
+		// Led instance from the REPL.
+		on: function() {
+		  led.on();
+		},
+		off: function() {
+		  led.off();
+		}
+	});
+});
+</code></pre>
+<pre><code>
+>> on()  // will turn on the LED
+// or
+>> off() // will turn off the LED
+</code></pre>
 				</section>
 
 				<section>
